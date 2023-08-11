@@ -72,6 +72,7 @@ public void SendStatsToDiscord(StatsHandler sd)
 1. Setting up our Discord Bot:
 Setup a new project for a Discord bot using discord.js and create a new application and bot on the Discord developer portal. I will not provide an entire walkthrough on this as there are already many tutorials on YouTube. Like this one from Under Ctrl for example.
 - https://www.youtube.com/watch?v=KZ3tIGHU314&t=217s
+- Once you have setup your Bot, make sure to copy your Bot Token, and paste it into the "" of botToken inside the Bot Scirpt.
 
 2. Implementing the Bot code:
 Use the code provided under the section "Discord Bot Script". This script will control our Discord Bot, which will process and manage our "Stats" data.
@@ -194,6 +195,7 @@ let webhookUserID = "";
 let statsChannelID = "";
 let yourUserID = "";
 let gameIDLength = 32;
+let botToken = "";
 
 client.on("messageCreate", async (msg) => {
     if (msg.channel.id === statsChannelID && msg.author.id === webhookUserID) {
@@ -588,7 +590,7 @@ process.on('SIGINT', () => {
 });
 
 client.login(
-      "MTA3NzE2MzEwNjA4NzczMTMyMQ.GvE08Z.dYMKcvrQtOZP7MTyS87pIZkC_fDLUjozOG4K30"
+      botToken
     );
 ```
 ## Help
