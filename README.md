@@ -31,8 +31,10 @@ Use the code provided under the section "Unity Script". This script handles send
 5. Creating your "Stats" class:
 Create a class that will hold the data you are wanting to send to Discord. See example below.
 ```c#
+// Class to hold our "Stats"
 public class StatsHandler : MonoBehaviour
 {
+    // Our "Stats"
     public float gameID;
     public float currentBal;
     public float totalEarned;
@@ -48,20 +50,29 @@ public class StatsHandler : MonoBehaviour
 ```
 
 6. Creating our send "Stats" to Discord method:
-Create a method to take in your "Stats" class and forms a message to send to Discord from the "Stats". See example below.
+- Create a method to take in your "Stats" class and forms a message to send to Discord from the "Stats". See example below, this example would be pasted into your DiscordStatsManager.
 ```c#
+// Our custom method to format our stats into a message to send to the Discord webhook
 public void SendStatsToDiscord(StatsHandler sd)
     {
+        // If "do send" option is enabled then we send the message (can change in editor in case you don't want stats to be sent temporarily)
         if (doSend)
         {
+            // Formatting our message, \n represents a new line
+            // Hey, I'm a new line :D
             string message = $"Unique ID: {sd.gameID}\nTotal $ Earned: {sd.totalEarned}\nTotal $ Spent: {sd.totalSpent}\nTotal Objects Placed: {sd.objectsPlaced}\nTotal Time Played: {sd.timePlayed}\nTotal Seeds Planted: {sd.seedsPlanted}\nTotal Plants Harvested: {sd.plantsHarvested}\nTotal Grams Pressed: {sd.gramsPressed}\nTotal Ozs Sold: {sd.ozsSold}\nTotal Plants Killed: {sd.plantsKilled}\nEnd";
 
+            // Debug to console to let you know stats are being sent to Discord
             Debug.Log("Sending stats - " + message);
 
+            // Calling our PostToDiscord method and passing in our formatted stats message
             StartCoroutine(PostToDiscordCoroutine(message));
         }
     }
 ```
+- If you want this method somewhere other than your DiscordStatsManager class, you can pass the gameobject through the editor.
+- Simply copy and paste "public DiscordStatsManager discordManager;" to the beginning of your class, and reference your DiscordStatsManager gameObject from the scene.
+- Now you can use StartCoroutine(discordManager.PostToDiscordCoroutine(message));
 
 7. Finally, call your method upon saving the game, or updating said stats. Keep in mind, the PostToDiscordCoroutine has a cooldown of 10 seconds. If you would like to change this cooldown, simply change the saveCooldown in your Unity script.
 
