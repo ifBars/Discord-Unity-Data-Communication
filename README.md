@@ -76,17 +76,17 @@ public void SendStatsToDiscord(StatsHandler sd)
 
 7. Finally, call your method upon saving the game, or updating said stats. Keep in mind, the PostToDiscordCoroutine has a cooldown of 10 seconds. If you would like to change this cooldown, simply change the saveCooldown in your Unity script.
 
-- Now you have a script that will send your stats to you Discord channel, however now we need to make a Discord bot that will process and manage these stats for us.
+- Now you have a script that will send your stats to your Webhooked Discord channel, however now we need to make a Discord bot that will process and manage these stats for us.
 
 ## Discord Bot Side: Processing and Managing Stats from Webhook
 
 1. Setting up our Discord Bot:
 Setup a new project for a Discord bot using discord.js and create a new application and bot on the Discord developer portal. I will not provide an entire walkthrough on this as there are already many tutorials on YouTube. Like this one from Under Ctrl for example.
 - https://www.youtube.com/watch?v=KZ3tIGHU314&t=217s
-- Once you have setup your Bot, make sure to copy your Bot Token, and paste it into the "" of botToken inside the Bot Scirpt.
 
 2. Implementing the Bot code:
 Use the code provided under the section "Discord Bot Script". This script will control our Discord Bot, which will process and manage our "Stats" data.
+- Once you have setup your Bot and implemented the Bot Script, make sure to copy your Bot Token, and paste it into the "" of botToken inside the Bot Script, at the bottom.
 
 3. Implementing your Discord IDs:
 Now we need to get both your Webhook UserID, your Discord UserID, and the ChannelID, in order for the bot to know what messages are from the Unity script, and to allow only you to be able to perform actions like, resetting stats, and what not.
