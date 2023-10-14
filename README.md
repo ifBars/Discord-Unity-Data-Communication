@@ -86,7 +86,7 @@ Setup a new project for a Discord bot using discord.js and create a new applicat
 
 2. Implementing the Bot code:
 Use the code provided [DiscordBot.js](DiscordBot.js). This script will control our Discord Bot, which will process and manage our "Stats" data.
-- Once you have setup your Bot and implemented the Bot Script, make sure to copy your Bot Token, and paste it into the "" of botToken inside the Bot Script, at the bottom.
+- Once you have setup your Bot and implemented the Bot Script, make sure to copy your Bot Token, and paste it into the "" of botToken inside the Bot Script.
 
 3. Implementing your Discord IDs:
 Now we need to get both your Webhook UserID, your Discord UserID, and the ChannelID, in order for the bot to know what messages are from the Unity script, and to allow only you to be able to perform actions like, resetting stats, and what not.
