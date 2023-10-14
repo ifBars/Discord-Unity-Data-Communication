@@ -13,7 +13,7 @@ Open your Unity project and create a new C# script named DiscordStatsManager.cs.
 Attach this script to a GameObject in your scene.
 
 2. Implementing the Unity Script:
-Use the code provided under the section "Unity Script". This script handles sending game stats to Discord through a webhook.
+Copy and paste the "UnityScript.cs", from the repo, into your new C# script. This script handles sending game stats to Discord through a webhook.
 
 3. Create a Discord webhook.
 - Open the Discord channel you want to receive stats in.
