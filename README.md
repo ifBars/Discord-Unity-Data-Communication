@@ -1,7 +1,7 @@
 
 # Creating a Discord Bot for (Game) Stats Tracking and Management System
 
-A quick write-up on how to create a stats system that interacts with Unity and Discord
+A quick write-up on how to create a stats/data communication system that interacts with Unity and Discord, that can be implemented into things like, video games, desktop apps, etc
 In this detailed guide, we will walk you through creating a system that enables you to send game stats from Unity to a Discord channel via a webhook and then store and manage those stats using a custom Discord bot. The Unity side will be responsible for sending the game stats to Discord, and the Discord bot side will be in charge of processing and managing these stats.
 
 
